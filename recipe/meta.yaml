@@ -1,5 +1,5 @@
 {% set name = "ncompare" %}
-{% set version = "1.9.0" %}
+{% set version = "1.10.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ncompare-{{ version }}.tar.gz
-  sha256: 10b394aa4ef88ce60e435129e268ecb9c6cd801128f43486c6471d2e53772af4
+  sha256: d4e135ed4cd23c81a9629b4785e481fab33b20aa189c15d37812d6bde0a52e5b
 
 build:
   entry_points:
