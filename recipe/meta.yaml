@@ -14,15 +14,15 @@ build:
     - ncompare = ncompare.console:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.9
+    - python {{ python_min }}
     - poetry-core >=1.0.0
     - pip
   run:
-    - python >=3.9
+    - python >={{ python_min }}
     - numpy >=1.26.0
     - netcdf4 >=1.6.4
     - xarray >=2023.9
@@ -37,6 +37,7 @@ test:
     - ncompare --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/nasa/ncompare
