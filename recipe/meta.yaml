@@ -1,5 +1,6 @@
 {% set name = "ncompare" %}
-{% set version = "1.13.1" %}
+{% set version = "1.14.1" %}
+{% set python_min = "3.11" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ncompare-{{ version }}.tar.gz
-  sha256: 059af5c27fc2ade2c5963259a6c83d7894656eb23f3ab14cab95d7ba73df6fe6
+  sha256: 9449ceedb677dbadf8a9ca7cbda1ea51ed20fead2e041623b1fe4120bacfb9d9
 
 build:
   entry_points:
@@ -18,18 +19,18 @@ build:
 
 requirements:
   host:
+    - hatchling
     - python {{ python_min }}
-    - poetry-core >=1.0.0
     - pip
   run:
     - python >={{ python_min }}
-    - numpy >=1.26.0
+    - numpy >=2.4.0
     - netcdf4 >=1.6.4
-    - xarray >=2023.9
+    - xarray >=2025.12.0
     - colorama >=0.4.6
     - openpyxl >=3.1.2
-    - h5py >=3.12.1
-    - h5netcdf >=1.4.1
+    - h5py >=3.15.1
+    - h5netcdf >=1.7.3
 
 test:
   imports:
